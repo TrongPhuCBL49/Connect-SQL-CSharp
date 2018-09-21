@@ -33,7 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtServerName = new System.Windows.Forms.TextBox();
-            this.txtUser = new System.Windows.Forms.TextBox();
+            this.txtUserID = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnConnect = new DevExpress.XtraEditors.SimpleButton();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,6 +46,8 @@
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtDatabaseName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.grpInformationConnect)).BeginInit();
             this.grpInformationConnect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTable)).BeginInit();
@@ -64,11 +66,13 @@
             this.grpInformationConnect.AppearanceCaption.Font = new System.Drawing.Font("Times New Roman", 14.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpInformationConnect.AppearanceCaption.Options.UseFont = true;
             this.grpInformationConnect.Controls.Add(this.txtPassword);
-            this.grpInformationConnect.Controls.Add(this.txtUser);
+            this.grpInformationConnect.Controls.Add(this.txtUserID);
             this.grpInformationConnect.Controls.Add(this.btnConnect);
+            this.grpInformationConnect.Controls.Add(this.txtDatabaseName);
             this.grpInformationConnect.Controls.Add(this.txtServerName);
             this.grpInformationConnect.Controls.Add(this.label3);
             this.grpInformationConnect.Controls.Add(this.label2);
+            this.grpInformationConnect.Controls.Add(this.label8);
             this.grpInformationConnect.Controls.Add(this.label1);
             this.grpInformationConnect.Location = new System.Drawing.Point(43, 193);
             this.grpInformationConnect.Name = "grpInformationConnect";
@@ -80,7 +84,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(28, 124);
+            this.label1.Location = new System.Drawing.Point(28, 96);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(274, 55);
             this.label1.TabIndex = 1;
@@ -89,16 +93,16 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 251);
+            this.label2.Location = new System.Drawing.Point(28, 307);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 55);
+            this.label2.Size = new System.Drawing.Size(189, 55);
             this.label2.TabIndex = 1;
-            this.label2.Text = "User:";
+            this.label2.Text = "User ID:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 378);
+            this.label3.Location = new System.Drawing.Point(28, 414);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(220, 55);
             this.label3.TabIndex = 1;
@@ -106,34 +110,35 @@
             // 
             // txtServerName
             // 
-            this.txtServerName.Location = new System.Drawing.Point(339, 121);
+            this.txtServerName.Location = new System.Drawing.Point(369, 93);
             this.txtServerName.Name = "txtServerName";
             this.txtServerName.Size = new System.Drawing.Size(370, 62);
             this.txtServerName.TabIndex = 1;
             // 
-            // txtUser
+            // txtUserID
             // 
-            this.txtUser.Location = new System.Drawing.Point(339, 248);
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(370, 62);
-            this.txtUser.TabIndex = 1;
+            this.txtUserID.Location = new System.Drawing.Point(369, 304);
+            this.txtUserID.Name = "txtUserID";
+            this.txtUserID.Size = new System.Drawing.Size(370, 62);
+            this.txtUserID.TabIndex = 3;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(339, 375);
+            this.txtPassword.Location = new System.Drawing.Point(369, 411);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(370, 62);
-            this.txtPassword.TabIndex = 1;
+            this.txtPassword.TabIndex = 4;
             // 
             // btnConnect
             // 
             this.btnConnect.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConnect.Appearance.Options.UseFont = true;
-            this.btnConnect.Location = new System.Drawing.Point(242, 490);
+            this.btnConnect.Location = new System.Drawing.Point(240, 511);
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(287, 78);
-            this.btnConnect.TabIndex = 1;
+            this.btnConnect.TabIndex = 5;
             this.btnConnect.Text = "Connect";
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
             // label4
             // 
@@ -154,7 +159,6 @@
             this.dgvTable.TabIndex = 3;
             this.dgvTable.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            this.dgvTable.Click += new System.EventHandler(this.gridControl1_Click);
             // 
             // gridView1
             // 
@@ -193,8 +197,9 @@
             this.btnOK.Location = new System.Drawing.Point(565, 107);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(165, 78);
-            this.btnOK.TabIndex = 1;
+            this.btnOK.TabIndex = 7;
             this.btnOK.Text = "OK";
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // cboTable
             // 
@@ -205,8 +210,7 @@
             this.cboTable.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cboTable.Size = new System.Drawing.Size(316, 60);
-            this.cboTable.TabIndex = 4;
-            this.cboTable.SelectedIndexChanged += new System.EventHandler(this.comboBoxEdit1_SelectedIndexChanged);
+            this.cboTable.TabIndex = 6;
             // 
             // groupControl2
             // 
@@ -242,6 +246,23 @@
             this.label7.TabIndex = 1;
             this.label7.Text = "2. Hồ Ngọc Sơn Hà   - 16110533";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(28, 202);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(325, 55);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Database name:";
+            // 
+            // txtDatabaseName
+            // 
+            this.txtDatabaseName.Location = new System.Drawing.Point(369, 199);
+            this.txtDatabaseName.Name = "txtDatabaseName";
+            this.txtDatabaseName.Size = new System.Drawing.Size(370, 62);
+            this.txtDatabaseName.TabIndex = 2;
+            // 
             // ConnectGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 33F);
@@ -253,7 +274,9 @@
             this.Controls.Add(this.grpInformationConnect);
             this.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.Name = "ConnectGUI";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dynamic Connection";
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             ((System.ComponentModel.ISupportInitialize)(this.grpInformationConnect)).EndInit();
             this.grpInformationConnect.ResumeLayout(false);
             this.grpInformationConnect.PerformLayout();
@@ -275,7 +298,7 @@
 
         private DevExpress.XtraEditors.GroupControl grpInformationConnect;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.TextBox txtUser;
+        private System.Windows.Forms.TextBox txtUserID;
         private System.Windows.Forms.TextBox txtServerName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -291,6 +314,8 @@
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtDatabaseName;
+        private System.Windows.Forms.Label label8;
     }
 }
 
