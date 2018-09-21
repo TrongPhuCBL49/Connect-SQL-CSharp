@@ -15,5 +15,15 @@ namespace GUI
         {
             InitializeComponent();
         }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxEdit1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
