@@ -29,25 +29,26 @@
         private void InitializeComponent()
         {
             this.grpInformationConnect = new DevExpress.XtraEditors.GroupControl();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtServerName = new System.Windows.Forms.TextBox();
-            this.txtUserID = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtUserID = new System.Windows.Forms.TextBox();
             this.btnConnect = new DevExpress.XtraEditors.SimpleButton();
+            this.txtDatabaseName = new System.Windows.Forms.TextBox();
+            this.txtServerName = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvTable = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.grpGetData = new DevExpress.XtraEditors.GroupControl();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnOK = new DevExpress.XtraEditors.SimpleButton();
             this.cboTable = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.btnOK = new DevExpress.XtraEditors.SimpleButton();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtDatabaseName = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnDisconnect = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grpInformationConnect)).BeginInit();
             this.grpInformationConnect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTable)).BeginInit();
@@ -67,6 +68,7 @@
             this.grpInformationConnect.AppearanceCaption.Options.UseFont = true;
             this.grpInformationConnect.Controls.Add(this.txtPassword);
             this.grpInformationConnect.Controls.Add(this.txtUserID);
+            this.grpInformationConnect.Controls.Add(this.btnDisconnect);
             this.grpInformationConnect.Controls.Add(this.btnConnect);
             this.grpInformationConnect.Controls.Add(this.txtDatabaseName);
             this.grpInformationConnect.Controls.Add(this.txtServerName);
@@ -80,24 +82,45 @@
             this.grpInformationConnect.TabIndex = 0;
             this.grpInformationConnect.Text = "Informatinon Connect";
             // 
-            // label1
+            // txtPassword
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(28, 96);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(274, 55);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Server name:";
+            this.txtPassword.Location = new System.Drawing.Point(369, 411);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(370, 62);
+            this.txtPassword.TabIndex = 4;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
-            // label2
+            // txtUserID
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 307);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(189, 55);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "User ID:";
+            this.txtUserID.Location = new System.Drawing.Point(369, 304);
+            this.txtUserID.Name = "txtUserID";
+            this.txtUserID.Size = new System.Drawing.Size(370, 62);
+            this.txtUserID.TabIndex = 3;
+            // 
+            // btnConnect
+            // 
+            this.btnConnect.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConnect.Appearance.Options.UseFont = true;
+            this.btnConnect.Location = new System.Drawing.Point(66, 521);
+            this.btnConnect.Name = "btnConnect";
+            this.btnConnect.Size = new System.Drawing.Size(287, 78);
+            this.btnConnect.TabIndex = 5;
+            this.btnConnect.Text = "Connect";
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
+            // 
+            // txtDatabaseName
+            // 
+            this.txtDatabaseName.Location = new System.Drawing.Point(369, 199);
+            this.txtDatabaseName.Name = "txtDatabaseName";
+            this.txtDatabaseName.Size = new System.Drawing.Size(370, 62);
+            this.txtDatabaseName.TabIndex = 2;
+            // 
+            // txtServerName
+            // 
+            this.txtServerName.Location = new System.Drawing.Point(369, 93);
+            this.txtServerName.Name = "txtServerName";
+            this.txtServerName.Size = new System.Drawing.Size(370, 62);
+            this.txtServerName.TabIndex = 1;
             // 
             // label3
             // 
@@ -108,37 +131,34 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Password:";
             // 
-            // txtServerName
+            // label2
             // 
-            this.txtServerName.Location = new System.Drawing.Point(369, 93);
-            this.txtServerName.Name = "txtServerName";
-            this.txtServerName.Size = new System.Drawing.Size(370, 62);
-            this.txtServerName.TabIndex = 1;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(28, 307);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(189, 55);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "User ID:";
             // 
-            // txtUserID
+            // label8
             // 
-            this.txtUserID.Location = new System.Drawing.Point(369, 304);
-            this.txtUserID.Name = "txtUserID";
-            this.txtUserID.Size = new System.Drawing.Size(370, 62);
-            this.txtUserID.TabIndex = 3;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(28, 202);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(325, 55);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Database name:";
             // 
-            // txtPassword
+            // label1
             // 
-            this.txtPassword.Location = new System.Drawing.Point(369, 411);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(370, 62);
-            this.txtPassword.TabIndex = 4;
-            // 
-            // btnConnect
-            // 
-            this.btnConnect.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConnect.Appearance.Options.UseFont = true;
-            this.btnConnect.Location = new System.Drawing.Point(240, 511);
-            this.btnConnect.Name = "btnConnect";
-            this.btnConnect.Size = new System.Drawing.Size(287, 78);
-            this.btnConnect.TabIndex = 5;
-            this.btnConnect.Text = "Connect";
-            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(28, 96);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(274, 55);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Server name:";
             // 
             // label4
             // 
@@ -146,7 +166,7 @@
             this.label4.Font = new System.Drawing.Font("Times New Roman", 15.9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(561, 43);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(589, 62);
+            this.label4.Size = new System.Drawing.Size(577, 61);
             this.label4.TabIndex = 2;
             this.label4.Text = "Connect SQL vs CSharp";
             // 
@@ -181,14 +201,16 @@
             this.grpGetData.TabIndex = 4;
             this.grpGetData.Text = "Get Data";
             // 
-            // label5
+            // cboTable
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(31, 121);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(140, 55);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Table:";
+            this.cboTable.Location = new System.Drawing.Point(206, 116);
+            this.cboTable.Name = "cboTable";
+            this.cboTable.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboTable.Properties.Appearance.Options.UseFont = true;
+            this.cboTable.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cboTable.Size = new System.Drawing.Size(316, 60);
+            this.cboTable.TabIndex = 6;
             // 
             // btnOK
             // 
@@ -201,16 +223,14 @@
             this.btnOK.Text = "OK";
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
-            // cboTable
+            // label5
             // 
-            this.cboTable.Location = new System.Drawing.Point(206, 116);
-            this.cboTable.Name = "cboTable";
-            this.cboTable.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboTable.Properties.Appearance.Options.UseFont = true;
-            this.cboTable.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cboTable.Size = new System.Drawing.Size(316, 60);
-            this.cboTable.TabIndex = 6;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(31, 121);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(140, 55);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Table:";
             // 
             // groupControl2
             // 
@@ -226,16 +246,6 @@
             this.groupControl2.TabIndex = 5;
             this.groupControl2.Text = "About";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(7, 104);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(661, 55);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "1. Nguyễn Trọng Phú - 16110540";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -246,22 +256,26 @@
             this.label7.TabIndex = 1;
             this.label7.Text = "2. Hồ Ngọc Sơn Hà   - 16110533";
             // 
-            // label8
+            // label6
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(28, 202);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(325, 55);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Database name:";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(7, 104);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(661, 55);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "1. Nguyễn Trọng Phú - 16110540";
             // 
-            // txtDatabaseName
+            // btnDisconnect
             // 
-            this.txtDatabaseName.Location = new System.Drawing.Point(369, 199);
-            this.txtDatabaseName.Name = "txtDatabaseName";
-            this.txtDatabaseName.Size = new System.Drawing.Size(370, 62);
-            this.txtDatabaseName.TabIndex = 2;
+            this.btnDisconnect.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDisconnect.Appearance.Options.UseFont = true;
+            this.btnDisconnect.Location = new System.Drawing.Point(425, 521);
+            this.btnDisconnect.Name = "btnDisconnect";
+            this.btnDisconnect.Size = new System.Drawing.Size(287, 78);
+            this.btnDisconnect.TabIndex = 5;
+            this.btnDisconnect.Text = "Disconnect";
+            this.btnDisconnect.Click += new System.EventHandler(this.btnDisconnect_Click);
             // 
             // ConnectGUI
             // 
@@ -272,7 +286,7 @@
             this.Controls.Add(this.grpGetData);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.grpInformationConnect);
-            this.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.Margin = new System.Windows.Forms.Padding(8);
             this.Name = "ConnectGUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dynamic Connection";
@@ -316,6 +330,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtDatabaseName;
         private System.Windows.Forms.Label label8;
+        private DevExpress.XtraEditors.SimpleButton btnDisconnect;
     }
 }
 
